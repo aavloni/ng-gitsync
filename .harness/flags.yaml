@@ -1,0 +1,148 @@
+featureFlags:
+  flags:
+  - flag:
+      name: app_settings$app_in_background_timeout_hours
+      identifier: app_settings$app_in_background_timeout_hours
+      description: ""
+      permanent: false
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: K8bgEnv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: canaryenv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: K8Env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: Prod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+  - flag:
+      name: harnessappdemodarkmode
+      identifier: harnessappdemodarkmode
+      description: ""
+      permanent: false
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: K8bgEnv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: canaryenv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: K8Env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: Prod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+  - flag:
+      name: testBooleanFlag
+      identifier: testBooleanFlag
+      description: ""
+      permanent: false
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: K8bgEnv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: canaryenv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: K8Env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: Prod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+  - flag:
+      name: test-gitsync-flag
+      identifier: testgitsyncflag
+      description: ""
+      permanent: false
+      spec:
+        type: boolean
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        variations:
+        - identifier: "true"
+          value: "true"
+        - identifier: "false"
+          value: "false"
+      environments:
+      - identifier: K8bgEnv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: canaryenv
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: K8Env
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: Prod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+  projectIdentifier: CSETest1
+  orgIdentifier: testorg
