@@ -144,41 +144,5 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
-  - flag:
-      name: test-gitsync-flag-2
-      identifier: testgitsyncflag2
-      description: ""
-      permanent: false
-      spec:
-        type: boolean
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        variations:
-        - identifier: "true"
-          value: "true"
-        - identifier: "false"
-          value: "false"
-      environments:
-      - identifier: K8bgEnv
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: canaryenv
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: K8Env
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
-      - identifier: Prod
-        default:
-          onVariation: "true"
-          offVariation: "false"
-        state: "off"
   projectIdentifier: CSETest1
   orgIdentifier: testorg
