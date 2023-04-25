@@ -36,6 +36,11 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: quickstart
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
   - flag:
       name: harnessappdemodarkmode
       identifier: harnessappdemodarkmode
@@ -68,6 +73,11 @@ featureFlags:
           offVariation: "false"
         state: "off"
       - identifier: Prod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: quickstart
         default:
           onVariation: "true"
           offVariation: "false"
@@ -108,6 +118,11 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "off"
+      - identifier: quickstart
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
   - flag:
       name: test-gitsync-flag
       identifier: testgitsyncflag
@@ -140,6 +155,11 @@ featureFlags:
           offVariation: "false"
         state: "off"
       - identifier: Prod
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
+      - identifier: quickstart
         default:
           onVariation: "true"
           offVariation: "false"
@@ -180,5 +200,10 @@ featureFlags:
           onVariation: "true"
           offVariation: "false"
         state: "on"
+      - identifier: quickstart
+        default:
+          onVariation: "true"
+          offVariation: "false"
+        state: "off"
   projectIdentifier: CSETest1
   orgIdentifier: testorg
