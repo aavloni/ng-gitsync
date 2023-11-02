@@ -1,0 +1,55 @@
+---
+pipeline:
+  projectIdentifier: "CSETest1"
+  orgIdentifier: "testorg"
+  tags: {}
+  stages:
+  - stage:
+      name: "multi line output variables in a run step"
+      identifier: "multi_line_output_variables_in_a_run_step"
+      description: ""
+      type: "CI"
+      spec:
+        cloneCodebase: false
+        execution:
+          steps:
+          - step:
+              type: "Run"
+              name: "Run_1"
+              identifier: "Run_1"
+              spec:
+                connectorRef: "account.My_Docker_Connector"
+                image: "nginx"
+                shell: "Bash"
+                command: "echo one >> diffchangelog.sql\necho two >> diffchangelog.sql\n\
+                  echo three >> diffchangelog.sql\n#export DIFF_CHANGELOG=$(cat diffchangelog.sql)\n\
+                  export DIFF_CHANGELOG=testing\n\necho $testingOption\n\nsleep 30\n\
+                  \necho testing 30 seconds"
+                privileged: true
+                envVariables:
+                  testingOption: "<+input>.default(No).allowedValues(Yes,No)"
+                outputVariables:
+                - name: "DIFF_CHANGELOG"
+              description: "500m"
+          - step:
+              type: "Run"
+              name: "Run_2"
+              identifier: "Run_2"
+              spec:
+                connectorRef: "account.My_Docker_Connector"
+                image: "nginx"
+                shell: "Bash"
+                command: "echo $DIFF_CHANGELOG"
+                envVariables:
+                  DIFF_CHANGELOG: "<+execution.steps.Run_1.spec.envVariables.DIFF_CHANGELOG>"
+              description: "test description from the step itself"
+        infrastructure:
+          type: "KubernetesDirect"
+          spec:
+            connectorRef: "k8testcluster"
+            namespace: "akmal"
+            automountServiceAccountToken: true
+            nodeSelector: {}
+            os: "Linux"
+  identifier: "multi_line_output_variables_in_a_run_step_Clone_2_Remote"
+  name: "multi line output variables in a run step - Clone 2 - Remote"
