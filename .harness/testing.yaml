@@ -1,0 +1,20 @@
+inputSet:
+  name: testing
+  identifier: testing
+  orgIdentifier: testorg
+  projectIdentifier: CSETest1
+  pipeline:
+    identifier: multi_line_output_variables_in_a_run_step_Clone_2_Remote
+    stages:
+      - stage:
+          identifier: multi_line_output_variables_in_a_run_step
+          type: CI
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: Run_1
+                    type: Run
+                    spec:
+                      envVariables:
+                        testingOption: "No"
